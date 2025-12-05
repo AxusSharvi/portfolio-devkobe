@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, MapPin, Calendar, ArrowRight, Linkedin, Github, Instagram, Twitter, Facebook, Youtube } from 'lucide-react';
 import profile from '../Images/profile.jpg'
+import FlowiseChatbotCDN from '../Flowise/FlowiseChatbotCDN';
 function Hero() {
     return (
         <section className="min-w-[50%] bg-gray-50 md:py-24">
@@ -31,6 +32,7 @@ function Hero() {
                                 Contact Us
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
+                            <FlowiseChatbotCDN />
                         </div>
                     </div>
 
