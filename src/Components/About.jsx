@@ -9,7 +9,7 @@ import {
 
 function About() {
     return (
-        <section id="about" className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+        <section id="about" className="py-16 min-h-screen md:py-24 bg-gray-50">
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Mission Statement */}
@@ -25,12 +25,15 @@ function About() {
                 <div className='md:flex '>
 
                     {/* How Can I Assist You? */}
-                    <div className="text-center md:text-left mb-12 md:mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <div className="text-left md:text-left mb-12 md:mb-16">
+                        <span className="text-green-600 font-semibold tracking-wide uppercase text-sm">
+                            Services
+                        </span>
+                        <h2 className="mt-2 text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
                             How May I Assist You?
                         </h2>
-
                     </div>
+
                     {/* Services Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -51,15 +54,15 @@ function About() {
                                 <ChevronRight className="w-6 h-6 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition-all" />
                             </div>
                             <p className="text-gray-600 mb-6">
-                                We create intuitive, visually appealing interfaces that enhance user experience and navigation, ensuring your app is both beautiful and functional across all devices.
+                                Create intuitive, visually appealing interfaces that enhance user experience and navigation, ensuring your app is both beautiful and functional across all devices.
                             </p>
-                            <a
+                            {/* <a
                                 href="#"
                                 className="inline-flex items-center gap-2 text-purple-600 font-medium hover:text-purple-700 group"
                             >
                                 View UI Projects
                                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </a>
+                            </a> */}
                         </div>
 
                         {/* Development */}
@@ -81,13 +84,13 @@ function About() {
                             <p className="text-gray-600 mb-6">
                                 Our team builds reliable, scalable solutions, delivering clean code that powers websites and mobile apps with top-notch performance and security.
                             </p>
-                            <a
+                            {/* <a
                                 href="#"
                                 className="inline-flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 group"
                             >
                                 Explore Development Work
                                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </a>
+                            </a> */}
                         </div>
 
                         {/* Graphic Design */}
@@ -109,13 +112,13 @@ function About() {
                             <p className="text-gray-600 mb-6">
                                 We design responsive, user-friendly websites that blend aesthetics with functionality, providing a seamless experience across devices and reflecting your brand's identity.
                             </p>
-                            <a
+                            {/* <a
                                 href="#"
                                 className="inline-flex items-center gap-2 text-green-600 font-medium hover:text-green-700 group"
                             >
                                 See Design Portfolio
                                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </a>
+                            </a> */}
                         </div>
 
                         {/* Branding */}
@@ -137,18 +140,18 @@ function About() {
                             <p className="text-gray-600 mb-6">
                                 We craft memorable brand identities, from logos to complete strategies, ensuring consistency and a strong connection with your audience across all platforms.
                             </p>
-                            <a
+                            {/* <a
                                 href="#"
                                 className="inline-flex items-center gap-2 text-orange-600 font-medium hover:text-orange-700 group"
                             >
                                 View Branding Projects
                                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </a>
+                            </a> */}
                         </div>
 
                     </div>
                 </div>
-                {/* CTA Section */}
+                {/* CTA Section
                 <div className="mt-16 md:mt-20 text-center">
                     <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12 text-white">
                         <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -162,7 +165,7 @@ function About() {
                             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
-                </div>
+                </div> */}
 
             </div>
         </section>

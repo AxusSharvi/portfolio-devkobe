@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+function Header({ refs }) {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const handleScroll = (section) => {
+        refs[section]?.current?.scrollIntoView({ behavior: "smooth" });
+    };
     return (
-        <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <header className="bg-white border-b border-gray-100 sticky top-0 z-100">
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
 
@@ -24,18 +27,40 @@ function Header() {
                     <nav className="hidden md:flex items-center justify-center flex-1 mx-8">
                         <div className="flex space-x-6 lg:space-x-8">
                             <a
+
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleScroll("hero");
+                                }}
                                 href="#"
                                 className="text-gray-600 hover:text-gray-900 font-medium px-3 py-2 rounded-md transition-colors duration-200 relative after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
                             >
                                 Home
                             </a>
                             <a
-                                href="#"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleScroll("about");
+                                }} href="#"
                                 className="text-gray-600 hover:text-gray-900 font-medium px-3 py-2 rounded-md transition-colors duration-200 relative after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
                             >
                                 About
                             </a>
                             <a
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleScroll("projects");
+                                }}
+                                href="#"
+                                className="text-gray-600 hover:text-gray-900 font-medium px-3 py-2 rounded-md transition-colors duration-200 relative after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
+                            >
+                                Projects
+                            </a>
+                            <a
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleScroll("contact");
+                                }}
                                 href="#"
                                 className="text-gray-600 hover:text-gray-900 font-medium px-3 py-2 rounded-md transition-colors duration-200 relative after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0"
                             >
@@ -83,27 +108,52 @@ function Header() {
                     <a
                         href="#"
                         className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-200 transform hover:translate-x-1"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleScroll("hero");
+                            setIsMenuOpen(false);
+                        }}
                     >
                         Home
                     </a>
                     <a
                         href="#"
                         className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-200 transform hover:translate-x-1"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleScroll("about");
+                            setIsMenuOpen(false);
+                        }}
+
                     >
                         About
                     </a>
                     <a
                         href="#"
                         className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-200 transform hover:translate-x-1"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleScroll("projects");
+                            setIsMenuOpen(false);
+                        }}
+
+                    >
+                        Projects
+                    </a>
+                    <a
+                        href="#"
+                        className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-200 transform hover:translate-x-1"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleScroll("contact");
+                            setIsMenuOpen(false);
+                        }}
                     >
                         Contact
                     </a>
                     <div className="pt-4 pb-3 border-t border-gray-100">
                         <button
-                            className="w-full px-4 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 active:scale-[0.98] transition-all duration-200"
+                            className="w-full px-4 py-3 border border-gray-300 text-gray-100 bg-gray-900 font-medium rounded-lg hover:bg-gray-50 active:scale-[0.98] transition-all duration-200"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Get in Touch

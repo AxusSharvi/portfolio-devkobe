@@ -3,7 +3,7 @@ import { Mail, MapPin, Calendar, ArrowRight, Linkedin, Github, Instagram, Twitte
 import profile from '../Images/profile.jpg'
 function Hero() {
     return (
-        <section className="min-w-[50%] bg-gradient-to-b from-white to-gray-50 py-12 md:py-24">
+        <section className="min-w-[50%] bg-gray-50 md:py-24">
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-20 gap-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 p-4 items-center ">
 
@@ -27,13 +27,11 @@ function Hero() {
 
                         {/* Contact Button */}
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                            <button className="group inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 active:scale-95 transition-all duration-300 font-medium text-lg">
+                            <button className="group cursor-pointer inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 active:scale-95 transition-all duration-300 font-medium text-lg">
                                 Contact Us
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
                         </div>
-
-
                     </div>
 
                     {/* Right Column - Brands & Image Placeholder */}
@@ -130,13 +128,13 @@ function Hero() {
                 </div>
 
                 {/* Stats Bar */}
-                <div className="mt-20 pt-8 border-t border-gray-200">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="mt-20 pt-8 border-t  border-gray-200">
+                    <div className="grid grid-cols-2 md:grid-cols-4  gap-8">
                         {[
-                            { value: "3+", label: "Years Experience(University))" },
+                            { value: "3+", label: "Years Experience" },
                             { value: "10+", label: "Projects Completed" },
                             { value: "10+", label: "Happy Instructors" },
-                            { value: "5+", label: "Awards Won(Dean's List)" },
+                            { value: "5+", label: "Awards Won" },
                         ].map((stat, index) => (
                             <div key={index} className="text-center">
                                 <div className="text-3xl md:text-4xl font-bold text-gray-900">{stat.value}</div>
