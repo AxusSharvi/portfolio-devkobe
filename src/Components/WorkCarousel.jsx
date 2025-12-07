@@ -57,11 +57,11 @@ const WorkCarousel = () => {
     const next = () => setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
 
     return (
-        <div className="md:w-[70%] bg-gray-50 mt-10 flex justify-between items-center">
+        <div className="md:w-[60%] bg-gray-50 mt-10 flex justify-between items-center">
             
             {/* Carousel Container */}
             <div 
-                className="relative w-full max-w-6xl mx-auto group px-4 md:px-0"
+                className="relative w-full max-w-4xl mx-auto group px-4 md:px-0"
                 onMouseEnter={() => setAutoPlay(false)}
                 onMouseLeave={() => setAutoPlay(true)}
             >

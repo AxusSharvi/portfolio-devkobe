@@ -1,7 +1,8 @@
-import React from 'react';
-import { Mail, MapPin, Calendar, ArrowRight, Linkedin, Github, Instagram, Twitter, Facebook, Youtube } from 'lucide-react';
+import { Mail, MapPin, Calendar, ArrowRight, Linkedin, Github, Instagram, Twitter, Facebook, Youtube, Download } from 'lucide-react';
 import profile from '../Images/profile.jpg'
 import FlowiseChatbotCDN from '../Flowise/FlowiseChatbotCDN';
+import kobeCV from '../myCV/kobeCV.pdf'
+import kobePFP from '../Images/kobePFP.jpg'
 function Hero() {
     return (
         <section className="min-w-[50%] bg-gray-50 md:py-24">
@@ -28,10 +29,15 @@ function Hero() {
 
                         {/* Contact Button */}
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                            <button className="group cursor-pointer inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 active:scale-95 transition-all duration-300 font-medium text-lg">
-                                Contact Us
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            <a 
+                                href={kobeCV}
+                                download="Amaro_CV.pdf"
+                                target='_blank'
+                                rel='noopener norefferer'
+                                className="group cursor-pointer inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 active:scale-95 transition-all duration-300 font-medium text-lg">
+                                Download CV
+                                <Download className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </a>
                             <FlowiseChatbotCDN />
                         </div>
                     </div>
@@ -90,7 +96,7 @@ function Hero() {
                         <div className='flex flex-col'>
                             <div className="relative">
                                 <div>
-                                    <img src={profile} alt="" className='h-100 w-105 rounded-lg' />
+                                    <img src={kobePFP} alt="" className='h-120 w-105 rounded-lg' />
                                 </div>
 
                             </div>

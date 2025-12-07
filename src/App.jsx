@@ -29,7 +29,7 @@ function App() {
           projects: projectsRef,
         }}
       />
-      <div className="w-full mt-20">
+      <div className="w-full mt-15">
         <div ref={heroRef} data-aos="fade-up">
           <Hero />
         </div>
@@ -40,7 +40,7 @@ function App() {
           <SelectedWorks />
           <WorkCarousel />
         </div>
-        <div ref={contactRef} data-aos="zoom-in" className="mt-20">
+        <div ref={contactRef} data-aos="slide-up" className="mt-20">
           <Mail />
         </div>
       </div>

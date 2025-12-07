@@ -71,9 +71,16 @@ function Header({ refs }) {
 
                     {/* Right - Desktop Button (hidden on mobile) */}
                     <div className="hidden md:block">
-                        <button className="cursor-pointer px-5 py-2.5 border border-gray-300 bg-gray-900 text-gray-200 font-medium rounded-full hover:text-gray-900 hover:bg-gray-100 hover:border-gray-200 active:bg-gray-50 transition-all duration-300 shadow-sm hover:shadow">
+                        <a
+
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleScroll("contact");
+                                setIsMenuOpen(false);
+                            }}
+                            className="cursor-pointer px-5 py-2.5 border border-gray-300 bg-gray-900 text-gray-200 font-medium rounded-full hover:text-gray-900 hover:bg-gray-100 hover:border-gray-200 active:bg-gray-50 transition-all duration-300 shadow-sm hover:shadow">
                             Get in Touch
-                        </button>
+                        </a>
                     </div>
 
                     {/* Mobile menu button with smooth transitions */}
@@ -152,12 +159,12 @@ function Header({ refs }) {
                         Contact
                     </a>
                     <div className="pt-4 pb-3 border-t border-gray-100">
-                        <button
+                        <a
                             className="w-full px-4 py-3 border border-gray-300 text-gray-100 bg-gray-900 font-medium rounded-lg hover:bg-gray-50 active:scale-[0.98] transition-all duration-200"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Get in Touch
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -2,8 +2,8 @@ import EnerGreen from '../Images/EnerGreen.png'
 
 function SelectedWorks() {
     return (
-        <section id="about" className="md:w-[55%] bg-gray-50 ">
-            <div className="w-full  mt-10 items-start md:flex mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="about" className="md:w-[50%] bg-gray-50 ">
+            <div className="w-full mt-10 items-start md:flex mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Section Header */}
                 <div className="flex flex-col md:w-md md:mr-3 md:flex-row justify-between items-end mb-12">

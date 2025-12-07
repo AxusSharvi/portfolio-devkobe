@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Send, Mail as MailIcon, User, MessageSquare, Phone, Sparkles } from 'lucide-react'
+import axios from 'axios' // <--- IMPORT AXIOS
+import { Send, Mail as MailIcon, User, MessageSquare, Phone, Sparkles, AlertCircle } from 'lucide-react'
 
 function Mail() {
     const [formData, setFormData] = useState({
@@ -8,8 +9,10 @@ function Mail() {
         phone: '',
         message: ''
     })
+    
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
+    const [errorMessage, setErrorMessage] = useState('') // <--- New State for Errors
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -22,23 +25,35 @@ function Mail() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSubmitting(true)
-        
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500))
-        
-        setIsSubmitting(false)
-        setIsSubmitted(true)
-        
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            setIsSubmitted(false)
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                message: ''
-            })
-        }, 3000)
+        setErrorMessage('') // Reset error message
+
+        try {
+            // --- ACTUAL API CALL ---
+            // Sending data to your backend server
+            const response = await axios.post('http://localhost:5000/api/contact', formData)
+
+            if (response.data.success) {
+                setIsSubmitting(false)
+                setIsSubmitted(true)
+                
+                // Clear the form
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: ''
+                })
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    setIsSubmitted(false)
+                }, 5000)
+            }
+        } catch (error) {
+            console.error("Error sending email:", error)
+            setIsSubmitting(false)
+            setErrorMessage("Failed to send message. Please try again later or check your connection.")
+        }
     }
 
     return (
@@ -137,11 +152,11 @@ function Mail() {
 
                     {/* Right Column - Form */}
                     <div className="relative">
-                        {/* Success Message */}
+                        {/* Success Message Overlay */}
                         {isSubmitted && (
-                            <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-sm rounded-3xl flex items-center justify-center z-20">
+                            <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-md rounded-3xl flex items-center justify-center z-20 transition-all duration-500">
                                 <div className="text-center p-8">
-                                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/30">
                                         <Send className="w-8 h-8 text-white" />
                                     </div>
                                     <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
@@ -230,6 +245,14 @@ function Mail() {
                                         placeholder="Tell me about your project, timeline, and goals..."
                                     />
                                 </div>
+
+                                {/* Error Message Alert */}
+                                {errorMessage && (
+                                    <div className="flex items-center gap-2 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm animate-fade-in">
+                                        <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                                        <p>{errorMessage}</p>
+                                    </div>
+                                )}
 
                                 {/* Submit Button */}
                                 <button
