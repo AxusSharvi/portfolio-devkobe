@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 
 const FlowiseChatbotCDN = () => {
   useEffect(() => {
-    // 1. Define the script content
+    // 1. Define the script content with the NEW ID
     const scriptContent = `
         import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
         Chatbot.init({
-            chatflowid: "17a988a1-6d94-4e7b-bef1-52ebfaaa12cf",
+            chatflowid: "c7bd3826-2fff-48bd-be0c-04c5ebb83dea",
             apiHost: "https://cloud.flowiseai.com",
         })
     `;
@@ -26,7 +26,7 @@ const FlowiseChatbotCDN = () => {
     };
   }, []);
 
-  return null; // The script renders the bubble outside the React root
+  return null;
 };
 
 export default FlowiseChatbotCDN;
