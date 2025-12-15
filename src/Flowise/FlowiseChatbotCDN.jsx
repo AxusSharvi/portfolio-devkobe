@@ -6,8 +6,8 @@ const FlowiseChatbotCDN = () => {
     const scriptContent = `
         import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
         Chatbot.init({
-            chatflowid: "c7bd3826-2fff-48bd-be0c-04c5ebb83dea",
-            apiHost: "https://cloud.flowiseai.com",
+            chatflowid: "21211e85-f469-4f84-9af1-35a331c9419d",
+            apiHost: "https://flowise-production-bec3.up.railway.app",
         })
     `;
 
